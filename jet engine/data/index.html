@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Jet Engine Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Jet Engine Dashboard</h1>
+      <p>Live Data from ESP32</p>
+    </header>
+
+    <!-- Last Updated Timestamp -->
+    <p id="last-update" style="text-align:center; font-style: italic; color: #555;">Updated at --</p>
+
+    <!-- Sensor Data Section -->
+    <div class="row">
+      <!-- DHT11 Sensor Data -->
+      <section class="card" aria-label="DHT11 Data">
+        <h2>DHT11 Data</h2>
+        <div class="data-row">
+          <p>Temperature: <span id="temperature">--</span>°C</p>
+          <p>Humidity: <span id="humidity">--</span>%</p>
+        </div>
+      </section>
+
+      <!-- MQ135 Sensor Data -->
+      <section class="card" aria-label="MQ135 Data">
+        <h2>MQ135 Data</h2>
+        <ul class="mq135-data-list">
+          <li>CO2: <span id="co2">--</span> ppm</li>
+          <li>NH3: <span id="nh3">--</span> ppm</li>
+          <li>NOx: <span id="nox">--</span> ppm</li>
+          <li>Alcohol: <span id="alcohol">--</span> ppm</li>
+          <li>Benzene: <span id="benzene">--</span> ppm</li>
+          <li>Smoke: <span id="smoke">--</span> ppm</li>
+          <li>Overall AQI: <span id="aqi">--</span> ppm</li>
+        </ul>
+      </section>
+
+      <!-- Flame Sensor Data -->
+      <section class="card" aria-label="Flame Sensor Data">
+        <h2>Flame Sensor</h2>
+        <p>Flame Detected: <span id="flame">--</span></p>
+        <p id="flame-warning" style="display: none;">🔥 Warning! Fire detected!</p>
+      </section>
+    </div>
+
+    <!-- BLDC Motor Control -->
+    <div class="card" aria-label="Motor Control">
+      <h3>BLDC Motor Speed</h3>
+      <input type="range" id="motorSpeed" min="0" max="100" value="0" />
+      <span id="motorSpeedValue">0</span>%
+    </div>
+    
+
+    <!-- Navigation Button -->
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="location.href='basic.html'" class="nav-button">JET ENGINE INFORMATION</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Programmed by Jet Engine Team</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
